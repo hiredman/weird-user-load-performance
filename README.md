@@ -5,11 +5,30 @@ foo.clj loads clojure.core.async then exits. the deps.edn has no
 paths, :user alias adds a user.clj on the classpath which loads
 foo.clj
 
+clj is the same throughout
+
+```
+{:version "1.9.0.375"
+ :config-files ["/home/kevin/.clojure/deps.edn" "deps.edn" ]
+ :install-dir "/home/kevin/clojure-scripts/lib/clojure"
+ :config-dir "/home/kevin/.clojure"
+ :cache-dir ".cpcache"
+ :force false
+ :repro false
+ :resolve-aliases ""
+ :classpath-aliases ""
+ :jvm-aliases ""
+ :main-aliases ""
+ :all-aliases ""}
+```
+
 ## Bad
 
+```
 openjdk version "12" 2019-03-19
 OpenJDK Runtime Environment 19.3 (build 12+30)
 OpenJDK 64-Bit Server VM 19.3 (build 12+30, mixed mode, sharing)
+```
 
 ```
 $  clj -A:user                           
@@ -23,9 +42,11 @@ $ clj foo.clj
 
 ## Bad
 
+```
 openjdk version "11.0.2" 2019-01-15 LTS
 OpenJDK Runtime Environment Zulu11.29+3-CA (build 11.0.2+7-LTS)
 OpenJDK 64-Bit Server VM Zulu11.29+3-CA (build 11.0.2+7-LTS, mixed mode)
+```
 
 ```
 $ clj -A:user                           
@@ -39,9 +60,11 @@ $ clj foo.clj
 
 ## Good
 
+```
 openjdk version "1.8.0_192"
 OpenJDK Runtime Environment (build 1.8.0_192-b12)
 OpenJDK 64-Bit Server VM (build 25.192-b12, mixed mode)
+```
 
 ```
 $ clj -A:user                           
@@ -55,9 +78,11 @@ $ clj foo.clj
 
 ## Good
 
+```
 openjdk version "1.8.0_72"
 OpenJDK Runtime Environment (Zulu 8.13.0.5-linux64) (build 1.8.0_72-b15)
 OpenJDK 64-Bit Server VM (Zulu 8.13.0.5-linux64) (build 25.72-b15, mixed mode)
+```
 
 ```
 $ clj -A:user                           
